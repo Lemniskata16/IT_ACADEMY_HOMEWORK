@@ -1,0 +1,151 @@
+.menu {
+    position: fixed;
+    top: 0;
+    width: 150px;
+    height: 280px;
+    background-color: antiquewhite;
+    border: chocolate 3px solid;
+    border-radius: 30px;
+    counter-reset: menu;
+    }
+.menu a {
+    color: black;
+    width: 100%;
+}
+
+.menu li:hover {
+    background:orangered;
+    opacity: 1.2;
+    border-radius: 10px;
+    width: fit-content;
+    transition: 0.5s;
+    }
+.numeraion_li::after {
+    counter-increment: menu;
+    content: "_" counter(menu);
+}
+
+#link1, #link2, #link3, #link5:target{
+    background: black;
+    color: #eeeeee;
+}
+
+#link3:target{
+    text-decoration: line-through;
+    color: brown;
+    }
+
+#link5:target {
+    text-decoration: underline;
+}
+
+
+#link4:target{
+    text-decoration: underline;
+    color: red;
+    font-size: larger;
+}
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 23px;
+    font-stretch: ultra-expanded;
+    line-height: 1.8;
+    margin-top: 10px;
+
+}
+
+h1 {
+    font-family: 'Luckiest Guy', cursive;
+    font-style:oblique;
+    margin: auto;
+}
+h2, li {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu_name {
+    font-size: 25px;
+}
+
+main {
+    margin: 210px;
+}
+
+
+.image {
+    text-align: center;
+}
+
+.text {
+    font-family: 'Source Serif Pro', serif;
+}
+
+
+
+section {
+    height: 100vh;
+    width: calc(100% - 20px);
+    background-color: #eee;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 5px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    counter-reset: col;
+}
+section .col {
+    width: 200px;
+    height: 100%;
+    background: brown;
+    display: inline-block;
+    overflow-y: auto;
+    overflow-x: hidden;
+    counter-increment: col;
+    counter-reset: cell;
+}
+section .col .cell{
+    width: 100%;
+    height: 200px;
+    background: mistyrose;
+    margin: 0 0 8px;
+    counter-increment: cell;
+}
+
+section .col .cell::before{
+    content: 'Column ' counter(col) ' Cell 'counter(cell);
+}
+
+.hover{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.hover p{
+    background: mistyrose;
+    position: relative;
+}
+
+.hover p::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.5;
+}
+.hover p:nth-child(odd):hover::before{
+    left: -50%;
+}
+.hover p:nth-child(even):hover::before{
+    left: -50%;
+}
+
