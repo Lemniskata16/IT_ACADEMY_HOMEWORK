@@ -84,7 +84,9 @@ main {
     font-family: 'Source Serif Pro', serif;
 }
 
-
+input:hover {
+    border: red solid 3px;
+}
 
 section {
     height: 100vh;
@@ -97,6 +99,7 @@ section {
     overflow-x: auto;
     white-space: nowrap;
     counter-reset: col;
+    border-radius: 20px;
 }
 section .col {
     width: 200px;
@@ -107,13 +110,18 @@ section .col {
     overflow-x: hidden;
     counter-increment: col;
     counter-reset: cell;
+    border-radius:20px;
 }
 section .col .cell{
     width: 100%;
     height: 200px;
     background: mistyrose;
-    margin: 0 0 8px;
+    margin: 0 0 9px;
     counter-increment: cell;
+    display: block;
+    border-color: black;
+    border-style: solid;
+    border-radius: 30px;
 }
 
 section .col .cell::before{
@@ -123,29 +131,60 @@ section .col .cell::before{
 .hover{
     width: 50%;
     margin: 0 auto;
+
 }
 
-.hover p{
+
+
+.hover p {
     background: mistyrose;
-    position: relative;
-}
+        position: relative;
 
+
+}
 .hover p::before{
     content: '';
-    position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
-    right: 0;
     width: 100%;
     height: 100%;
-    background: black;
+    right: 0%;
+    position: absolute;
+    background: #000;
+    opacity: 0;
+    }
+
+.hover p:nth-child(odd):hover::before{
+    right: -50%;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    background: linear-gradient(270deg, #000, #fff);
     opacity: 0.5;
 }
-.hover p:nth-child(odd):hover::before{
+
+
+.hover p:nth-child(even):hover::before {
     left: -50%;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    background: linear-gradient(270deg, #fff, #000);
+    opacity: 0.5;
+
 }
-.hover p:nth-child(even):hover::before{
-    left: -50%;
+
+
+
+
+
+
+
+
+
+
+
+.text_block_1 {
+    background-image: url("images_for_article/background.jpg");
+    opacity: 0.5;
 }
+
 
